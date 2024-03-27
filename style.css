@@ -604,6 +604,7 @@ i{
   opacity: 1;
 } */
 
+/* 母乳相談、育児相談・沐浴指導、赤ちゃんを迎える話 */
 .about-subtitol {
   margin: 32px auto 0;
   max-width: 662px;
@@ -619,8 +620,32 @@ i{
   margin: 0 0 16px 16px;
 }
 
+.about-subimg {
+  width: 80%;
+  height: 360px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.about-subimg img{
+  width: 100%;
+  height: 100%;
+}
+
+.about-subimg2 {
+  width: 300px;
+  height: 400px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.about-subimg2 img{
+  height: 100%;
+}
+
+
 .about-subtitol-coment {
-  padding: 16px;
+  padding: 16px 32px;
   font-size: 18px;
   line-height: 1.4;
   text-align: left;
@@ -659,6 +684,7 @@ i{
   .about-coment p {
     line-height: 1.9;
   }
+  
 
   .about-img {
     width: 100%;
@@ -666,6 +692,25 @@ i{
     margin-top: 16px;
   }
 
+  .about2-img {
+    width: 100%;
+    height: 360px;
+    margin-top: 16px;
+  }
+
+  .about-subimg {
+    width: 80%;
+    height: 300px;
+  }
+
+  .about-subimg2 {
+    width: 240px;
+    height: 320px;
+  }
+
+  .about-subtitol-coment {
+    font-size: 14px;
+  }
 }
 
 /* プロフィール部分のコード */
@@ -788,5 +833,32 @@ i{
   .prof-footer {
     margin-top: 100px;
     height: 80px;
+  }
+}
+
+
+/* お問い合わせ */
+.prof-wrap h2 {
+  font-size: 24px;
+  color: #595959;
+  font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+  padding: 16px 0;
+}
+
+.prof-wrap h2 a:hover{
+  border-bottom: solid 1px #87BF8B;
+  color: #87BF8B;
+}
+
+.contact-coution {
+  font-size: 14px;
+  text-align: left;
+  line-height: 1.3;
+  margin: 0 64px;
+}
+
+@media (max-width:768px){
+  .prof-wrap h2 {
+    font-size: 24px;
   }
 }
