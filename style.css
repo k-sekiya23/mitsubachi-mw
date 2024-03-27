@@ -1,0 +1,792 @@
+@charset "utf-8";
+
+/* 共通CSS */
+
+body{
+  margin:0 auto;
+  background-color: #d5cdbd;
+}
+
+/* ヘッダーCSS */
+
+.header-wrapper {
+  height: 110px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.8;
+  z-index: 2;
+}
+
+.header-main{
+  display: flex;
+  align-items: center;
+
+}
+
+.header-logo{
+  height: 110px;
+  width: 125px;
+  margin: 0 auto;
+}
+
+.header-logo img {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header-title {
+  width: 280px;
+  text-align: center;
+}
+
+.header-title h1 {
+  font-size: 36px;
+  font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+  text-align: center;
+}
+
+.gnavi__wrap {
+  width: 40%;
+  padding-right: 16px;
+  max-width: 405px;
+}
+.gnavi__lists {
+  display: flex;
+}
+.gnavi__list {
+  width: 33%;
+  max-width: 120px;
+  height: 60px;
+  position: relative;
+  transition: all .3s;
+  font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+}
+.gnavi__list:hover {
+  background-color: #d5cdbd;
+}
+.gnavi__list:not(:first-child)::before {
+  content: "";
+  width: 1px;
+  height: 100%;
+  background-color: #87BF8B;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all .3s;
+}
+.gnavi__list:hover::before {
+  background-color: #d5cdbd;
+}
+.gnavi__list a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  transition: all .3s;
+}
+.gnavi__list:hover a {
+  color: #fff;
+}
+
+
+/* ドロップダウンメニュー */
+.dropdown__lists {
+  display: none  !important;/*デフォルトでは非表示の状態にしておく*/
+  width: 30%;
+  position: absolute;
+  top: 50px;
+  right: 0;
+}
+.gnavi__list:hover .dropdown__lists {
+  display: block  !important;/*Gナビメニューにホバーしたら表示*/
+}
+.dropdown__list {
+  background-color: #d5cdbd;
+  height: 60px;
+  transition: all .3s;
+  position: relative;
+}
+.dropdown__list:not(:first-child)::before{
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #d5cdbd;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.dropdown__list:hover {
+  background-color: #ecd5a7;
+}
+.dropdown__list a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #87BF8B;
+  text-decoration: none;
+  position: relative;
+}
+.dropdown__list a::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-top: 2px solid #87BF8B;
+  border-left: 2px solid #87BF8B;
+  transform: rotate(135deg);
+  position: absolute;
+  right: 15px;
+  top: calc(50% - 5px);
+}
+.dropdown__list:hover a{
+  color: #87BF8B;
+}
+
+.dropdown__lists {
+  visibility: hidden;/*デフォルトでは非表示の状態にしておく*/
+  opacity: 0;/*不透明度0*/
+  transition: all .3s;/*表示の変化を0.3秒に指定*/
+  width: 100%;
+  position: absolute;
+  top: 60px;
+  left: 0;
+}
+.gnavi__list:hover .dropdown__lists {
+  visibility: visible;/*Gナビメニューにホバーしたら表示*/
+  opacity: 1;/*不透明度1*/
+}
+
+/* オーバーレイ */
+.sp-menu{
+  display: block;
+  padding: 20px;
+}
+
+.sp-menu #open {
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.sp-menu #open.hide {
+  display: none;
+}
+
+.sp-menu{
+  display: none;
+}
+
+main {
+  padding: 0 16px;
+}
+
+.overlay {
+  width: 40%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.95);
+  text-align: center;
+  padding:64px 48px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .6s;
+}
+
+.overlay.show {
+  opacity: 0.8;
+  pointer-events: auto;
+}
+
+.overlay #close {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.overlay ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.overlay li:hover {
+  color: #d5cdbd;
+}
+
+.overlay li {
+  margin-top: 32px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .3s, transform .3s;
+}
+
+.overlay.show li {
+  opacity: 1;
+  transform: none;
+}
+
+.overlay.show li:nth-child(1) {
+  transition-delay: .1s;
+}
+
+.overlay.show li:nth-child(2) {
+  transition-delay: .2s;
+}
+
+.overlay.show li:nth-child(3) {
+  transition-delay: .3s;
+}
+
+
+.wrap {
+  width: 70%;
+  min-width: 662px;
+  height: auto;
+  background-color: white;
+  text-align: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 32px 16px;
+
+  position:relative;
+  top: 110px;
+}
+
+.top-chapter {
+  height: 64px;
+  font-size: 28px;
+  color: white;
+  font-weight: bold;
+  font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+  background-color: #87BF8B;
+  text-align: center;
+  padding: 16px 0;
+}
+
+@media (max-width:768px){
+  .header-wrapper {
+    height: 100px;
+  }
+  
+  .header-main{
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-logo{
+    height: 100px;
+    width: 105px;
+    margin: 0 auto;
+  }
+  
+  .header-logo img {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .header-title {
+    width: 250px;
+  }
+  
+  .header-title h1 {
+    font-size: 32px;
+  }
+
+  .gnavi__wrap {
+  display: none;
+  }
+  
+  .sp-menu{
+    display: block;
+  }
+
+  .sp-menu:hover{
+    color: #d5cdbd;
+  }
+  
+  .wrap {
+    min-width: 500px;
+    margin: 0 auto;
+    padding:16px 0 0 ;
+    position: relative;
+    top: 100px;
+  }
+
+}
+
+/* 共通フッター部分 */
+
+footer {
+  width: 100%;
+  height: 96px;
+  background-color: #87BF8B;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-taitl{
+  color: white;
+  font-weight: bold;
+  font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+  font-size: 18px;
+  padding-left: 18px;
+  width: 30%;
+}
+
+.source {
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  text-wrap: wrap;
+  width: 40%;
+}
+
+.footer-item{
+  width: 30%;
+}
+
+.footer-item :hover{
+  color: #d5cdbd;
+}
+
+i{
+  float: right;
+  padding-right: 32px;
+  color: white;
+}
+
+.icon::before {
+  font-family: “Font Awesome 5 Free”;
+  font-weight: 900;
+  content: “\f000”;
+}
+
+@media (max-width:768px){
+  footer {
+    height: 80px;
+    width: 100%;
+  }
+
+  .source {
+    font-size: 12px; 
+    width: 50%;
+  }
+
+  .footer-item{
+    width: 20%;
+  }
+
+}
+
+@media (max-width:500px){
+  footer {
+    height: 80px;
+    width: 100%;
+    width: 500px;
+  }
+}
+
+/* index  main部分CSS */
+
+.main-img {
+  width: 360px;
+  height: 400px;
+  margin:0 auto;
+}
+
+.main-img img {
+  max-width: 100%;
+  height:auto;
+}
+
+.main-sub {
+  width: 600px;
+  margin: 32px auto;
+  align-items: center;
+  padding-bottom: 32px;
+}
+
+.main-sub img {
+  width: 100%;
+  height: auto;
+}
+
+.contain {
+  width: 50%;
+  min-width: 600px;
+  height: 300px;
+  background-color: rgba(255,255,255, 0.4);
+  text-align: center;
+  align-items: center;
+  margin: 32px auto;
+}
+
+.main-copy {
+  display:flex;
+  flex-flow: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  margin: 32px auto;
+  text-align: center;
+}
+
+.main-copy p {
+  font-size: 20px;  
+  font-weight: bold;
+  line-height: 1.5;
+  font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+  color: #595959;
+  white-space: nowrap;
+  opacity: 1;
+}
+
+.main-copy span {
+  font-size: 28px;
+  color: #87BF8B;
+}
+
+@media (max-width:768px){
+
+  .contain {
+    min-width: 450px;
+    height: 240px;
+  }
+
+  .main-img {
+    width: 300px;
+    height: 320px;
+    margin:0 auto;
+  }
+
+  .main-sub {
+    width: 100%;
+    height: 80px;
+    padding: 0;
+  }
+
+  .main-copy {
+    margin: 16px 0 0;
+  }
+
+  .main-copy p {
+    font-size: 16px;  
+    line-height: 1.8;
+  }
+
+  .main-copy span {
+    font-size: 24px;
+  }
+}
+
+/*index about部分 */
+.about-chapter {
+  margin-top: 125px;
+  height: 64px;
+  font-size: 28px;
+  color: white;
+  font-weight: bold;
+  font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+  background-color: #87BF8B;
+  text-align: center;
+  padding: 16px 0;
+}
+
+.about {
+  font-size: 16px;
+  text-align: center;
+  white-space: nowrap;
+  font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+  margin-top: 32px;
+}
+
+.about-coment p {
+  line-height: 1.7;
+}
+
+.wrap-2 {
+  width: 70%;
+  min-width: 662px;
+  height: auto;
+  background-color: white;
+  text-align: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 32px 0;
+}
+
+.about-img {
+  width: 662px;
+  height:400px;
+  margin-top: 32px;
+}
+
+.about2-img {
+  width: 662px;
+  height:500px;
+  margin-top: 32px;
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.about-items {
+  max-width: 662px;
+  align-items: center;
+  margin: 0 auto;
+  background-color: red;
+}
+
+.about-item {
+  width: 100%;
+  display: flex;
+  margin: 32px auto 0;
+  background-color: blue;
+}
+
+.item-coment {
+  width: 40%;
+  font-size: 16px;
+  line-height: 1.7;
+  text-align: left;
+  padding:0 16px;
+  background-color: pink;
+}
+
+.item-img {
+  width: 60%;
+  height: 300px;
+  
+}
+
+.item-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.about-item:nth-child(2n+1) { flex-direction: row; }         
+
+.about-item:nth-child(2n  ) { flex-direction: row-reverse; } 
+
+
+/* .hero img {
+  width: 60%;
+  height: 300px;
+  object-fit:cover; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.hero img.current {
+  opacity: 1;
+} */
+
+.about-subtitol {
+  margin: 32px auto 0;
+  max-width: 662px;
+  text-align: left;
+}
+
+.about-sub-item {
+  margin-bottom: 32px;
+}
+
+.about-subtitol-img {
+  height: 64px;
+  margin: 0 0 16px 16px;
+}
+
+.about-subtitol-coment {
+  padding: 16px;
+  font-size: 18px;
+  line-height: 1.4;
+  text-align: left;
+  color: #595959;
+  font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+}
+
+.about-subtitol-coment span{
+  font-size: 20px;
+  color: #87BF8B;
+}
+
+@media (max-width:768px){
+
+  .wrap-2 {
+    min-width: 500px;
+    margin: 0 auto;
+    padding: 16px 0;
+  }
+
+  .about-chapter {
+    margin-top: 70px;
+    height: 60px;
+    font-size: 26px;
+    color: white;
+  }
+
+  .about {
+    font-size: 14px;
+    text-align: center;
+    white-space: nowrap;
+    font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+    margin-top: 16px;
+  }
+
+  .about-coment p {
+    line-height: 1.9;
+  }
+
+  .about-img {
+    width: 100%;
+    height: 300px;
+    margin-top: 16px;
+  }
+
+}
+
+/* プロフィール部分のコード */
+/* prof  */
+
+.prof-wrap {
+  width: 70%;
+  min-width: 662px;
+  height: auto;
+  background-color: white;
+  text-align: center;
+  align-items: center;
+  margin: 0 auto;
+  padding-bottom: 16px;
+  position:relative;
+  top: 110px;
+}
+
+.prof-img {
+  width: 600px;
+  height: 450px;
+  margin:0 auto;
+  padding: 16px 0;
+}
+
+.prof-img img {
+  max-width: 100%;
+}
+
+.prof-name {
+  margin: 16px 0;
+}
+
+.prof-name h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #595959;
+  font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+  padding-bottom: 16px;
+}
+
+.prof-name h2 {
+  font-size: 32px;  color: #595959;
+}
+
+.prof-coment {
+  font-size: 18px;
+  color: #595959;
+  text-align: center;
+  white-space: nowrap;
+  font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+  margin: 32px 0;
+}
+
+.prof-coment p {
+  line-height: 1.7;
+}
+
+.prof-coment span {
+  font-weight: bold;
+  color: #87BF8B;
+}
+
+.license-img {
+  width: 662px;
+  height:450px ;
+  margin: 32px 0;
+}
+
+.license-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.prof-footer {
+  margin-top: 110px;
+}
+
+.cost {
+  margin: 32px 64px 16px 64px;
+  padding: 16px;
+  border: 1px solid #87BF8B;
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.cost-caution {
+  font-size: 14px;
+  text-align: left;
+  line-height: 1.3;
+  margin: 0 64px;
+}
+
+@media (max-width:768px){
+  .prof-wrap {
+    min-width: 500px;
+    margin: 0 auto;
+    position: relative;
+    top: 100px;
+  }
+
+  .prof-img {
+    width: 500px;
+    height: 380px;
+    margin:0 auto;
+    padding: 16px 0;
+  }
+
+  .prof-coment p {
+    line-height: 1.3;
+  }
+
+  .license-img {
+    width: 100%;
+    height: 350px;
+    margin: 16px 0;
+  }
+
+  .prof-footer {
+    margin-top: 100px;
+    height: 80px;
+  }
+}
