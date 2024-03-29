@@ -53,17 +53,19 @@ body{
 }
 
 .gnavi__wrap {
-  width: 40%;
+  width: 50%;
   padding-right: 16px;
-  max-width: 405px;
+  max-width: 560px;
 }
 .gnavi__lists {
   display: flex;
+  justify-content: space-between;
 }
 .gnavi__list {
-  width: 33%;
-  max-width: 120px;
+  width: 25%;
+  /* max-width: 120px; */
   height: 60px;
+  margin: 0 auto;
   position: relative;
   transition: all .3s;
   font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
@@ -262,7 +264,7 @@ main {
   text-align: center;
   align-items: center;
   margin: 0 auto;
-  padding: 32px 16px;
+  padding: 32px 16px 0;
 
   position:relative;
   top: 110px;
@@ -308,18 +310,6 @@ main {
   .header-title h1 {
     font-size: 32px;
   }
-
-  .gnavi__wrap {
-  display: none;
-  }
-  
-  .sp-menu{
-    display: block;
-  }
-
-  .sp-menu:hover{
-    color: #d5cdbd;
-  }
   
   .wrap {
     min-width: 500px;
@@ -329,6 +319,20 @@ main {
     top: 100px;
   }
 
+}
+
+@media (max-width:817px){
+  .gnavi__wrap {
+    display: none;
+    }
+    
+    .sp-menu{
+      display: block;
+    }
+  
+    .sp-menu:hover{
+      color: #d5cdbd;
+    }
 }
 
 /* 共通フッター部分 */
