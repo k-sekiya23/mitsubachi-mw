@@ -171,7 +171,7 @@ body{
   opacity: 1;/*不透明度1*/
 }
 
-/* オーバーレイ */
+/* SP版オーバーレイ */
 .sp-menu{
   display: block;
   padding: 20px;
@@ -670,20 +670,6 @@ i{
   .about-item:nth-child(2n  ) { flex-direction: row-reverse; } 
 }
 
-/* .hero img {
-  width: 60%;
-  height: 300px;
-  object-fit:cover; 
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 1s;
-}
-
-.hero img.current {
-  opacity: 1;
-} */
 
 /* 母乳相談、育児相談・沐浴指導、赤ちゃんを迎える話 */
 .about-subtitol {
