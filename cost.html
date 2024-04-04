@@ -13,11 +13,21 @@ href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"
 />
 <script src="https://kit.fontawesome.com/470eab1a94.js" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+<script>
+  $(function () {
+    $(window).scroll(function () {
+      const wHeight = $(window).height();
+      const scrollAmount = $(window).scrollTop();
+      $(window).on('load', function(){
+        $('.fadeInDown0').addClass('open');
+      });
+    });
+  });
+</script>
 </head>
 <body>
   <header>
-    <div class="header-wrapper">
+    <div class="header-wrapper fadeInDown0 updown">
       <div class="header-main">
         <div class="header-logo"><a href="index.html"><img src="img/header-logo.png" alt=""></a></div>
         <div class="header-title">
@@ -68,19 +78,19 @@ href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"
       <ul>
         <li><a href="index.html">ホーム</a></li>
         <li><a href="prof.html">プロフィール</a></li>
-        <li><a href="cost.html">費用</a></li>
+        <li><a href="cost.html">費用案内</a></li>
         <li><a href="contact.html">お問い合わせ</a></li>
       </ul>
     </nav>
   </div>
 
   <div class="prof-wrap">
-    <div class="top-chapter">
+    <div class="top-chapter fadeInDown updown">
       <h1>費用案内</h1>
     </div>
 
     <section id="cost">
-      <div class="cost">
+      <div class="cost fadeInDown downup">
         <p>・母乳相談 5,000円</p>
         <p>・育児相談 3,000円</p>
         <p>・沐浴指導 3,500円</p>
@@ -99,7 +109,7 @@ href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"
         <p>費用に関してはお気軽にご相談ください。</p>
       </div>
 
-      <div class="cost-caution">
+      <div class="cost-caution fadeInDown2 downup">
         <p>※交通費は別途500円～いただきます。</p>
         <p>※有料駐車場を利用した場合もご負担お願いいたします。</p>
         <p>※土日祝日、16時以降のご予約は＋1,000円いただきます。</p>

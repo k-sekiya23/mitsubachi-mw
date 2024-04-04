@@ -8,6 +8,72 @@ body{
   height: 100%;
 }
 
+/* JSフェードインアニメーション */
+.fade-in {
+  opacity: 0;
+  transition-duration: 800ms;
+  transition-property: opacity, transform;
+}
+
+.fade-in2 {
+  opacity: 0;
+  transition-duration: 1000ms;
+  transition-property: opacity, transform;
+}
+
+.fade-in-up {
+  transform: translate(0, 50px);
+}
+
+.fade-in-down {
+  transform: translate(0, -50px);
+}
+
+.scroll-in {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/*jQeryフェードインアニメーションの指定*/
+.scrollanime {opacity: 0;} /*一瞬表示されるのを防ぐ*/
+
+.fadeInDown0 {
+    animation-name: fadeInDown;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.fadeInDown {
+  animation-name: fadeInDown;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.fadeInDown2 {
+  animation-name: fadeInDown;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInDown {
+  0% {
+      opacity: 0;
+  }
+  100% {
+  opacity: 1;
+  transform: translate(0);
+  }
+}
+
+/*上下の動きを指定*/
+.updown {
+transform: translateY(-60px);
+}
+
+.downup {
+transform: translateY(60px);
+}
+
 /* ヘッダーCSS */
 
 .header-wrapper {
@@ -454,7 +520,7 @@ i{
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  margin: 32px auto;
+  margin: 16px auto;
   text-align: center;
 }
 
@@ -540,7 +606,7 @@ i{
   text-align: center;
   align-items: center;
   margin: 0 auto;
-  padding: 32px 0;
+  padding: 16px 0;
 }
 
 .about-img {
@@ -716,7 +782,7 @@ i{
 
 
 .about-subtitol-coment {
-  padding: 16px 32px;
+  padding: 16px 32px 0;
   font-size: 18px;
   line-height: 1.4;
   text-align: left;

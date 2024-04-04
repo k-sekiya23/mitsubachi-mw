@@ -13,11 +13,21 @@ href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"
 />
 <script src="https://kit.fontawesome.com/470eab1a94.js" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+<script>
+  $(function () {
+    $(window).scroll(function () {
+      const wHeight = $(window).height();
+      const scrollAmount = $(window).scrollTop();
+      $(window).on('load', function(){
+        $('.fadeInDown0').addClass('open');
+      });
+    });
+  });
+</script>
 </head>
 <body>
   <header>
-    <div class="header-wrapper">
+    <div class="header-wrapper fadeInDown0 updown">
       <div class="header-main">
         <div class="header-logo"><a href="index.html"><img src="img/header-logo.png" alt=""></a></div>
         <div class="header-title">
@@ -73,31 +83,30 @@ href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"
       </ul>
     </nav>
   </div>
-  </div>
 
   <div class="prof-wrap">
-    <div class="top-chapter">
+    <div class="top-chapter fadeInDown updown">
       <h1>お問い合わせ</h1>
     </div>
 
-    <h2 >LINEでのお問い合わせはこちら</h2>
+    <h2 class="fadeInDown2 updown">LINEでのお問い合わせはこちら</h2>
 
-    <div class="contact-qr">
+    <div class="contact-qr fadeInDown2 downup">
       <a href="https://page.line.me/006svplg">
         <img src="img/qr-code.jpg" alt="QRコード">
       </a>
     </div>
 
-    <h2 >メールでのお問い合わせはこちら</h2>
+    <h2 class="fadeInDown2 updown">メールでのお問い合わせはこちら</h2>
 
-    <h2>↓↓↓</h2>
+    <h2 class="fadeInDown2 updown">↓↓↓</h2>
 
-    <h2><a href="mailto:mitubachi.mw@gmail.com?subject=お問い合わせ">mitubachi.mw@gmail.com</a></h2>
+    <h2 class="fadeInDown2 downup"><a href="mailto:mitubachi.mw@gmail.com?subject=お問い合わせ">mitubachi.mw@gmail.com</a></h2>
 
-    <h2 >悩みを抱え込まずお気軽にお問い合わせください。</h2>
+    <h2 class="fadeInDown2 updown">悩みを抱え込まずお気軽にお問い合わせください。</h2>
 
-    <p class="contact-coution">※ケア中などですぐに返信できないことがございます。</p>
-    <p class="contact-coution">ご了承ください。</p>
+    <p class="contact-coution fadeInDown2 downup">※ケア中などですぐに返信できないことがございます。</p>
+    <p class="contact-coution fadeInDown2 downup">ご了承ください。</p>
 
   </div>
 

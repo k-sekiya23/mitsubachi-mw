@@ -13,11 +13,21 @@ href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"
 />
 <script src="https://kit.fontawesome.com/470eab1a94.js" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+<script>
+  $(function () {
+    $(window).scroll(function () {
+      const wHeight = $(window).height();
+      const scrollAmount = $(window).scrollTop();
+      $(window).on('load', function(){
+        $('.fadeInDown0').addClass('open');
+      });
+    });
+  });
+</script>
 </head>
 <body>
   <header>
-    <div class="header-wrapper">
+    <div class="header-wrapper fadeInDown0 updown">
       <div class="header-main">
         <div class="header-logo"><a href="index.html"><img src="img/header-logo.png" alt=""></a></div>
         <div class="header-title">
@@ -78,16 +88,16 @@ href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"
     <section>
       <div class="main">
         <div class="main-imgs">
-          <div class="main-img">
+          <div class="main-img fadeInDown2 downup">
             <img src="img/main-img.jpg" alt="">
           </div>
-          <div class="main-sub">
+          <div class="main-sub fadeInDown0 updown">
             <img src="img/main.png" alt="">
           </div>
         </div>
     
         <div class="contain">
-          <div class="main-copy">
+          <div class="main-copy fadeInDown2 updown">
             <div class="copy-items">
               <p>みつばち助産院は大阪府枚方市にある<span>出張型助産院</span>です</p>
             </div>
@@ -109,12 +119,12 @@ href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"
   <div class="wrap-2">
     <section id="about">
 
-      <div class="about-chapter">
+      <div class="about-chapter fade-in fade-in-down">
         <h1>みつばち助産院でできること</h1>
       </div>
   
       <div class="about">
-        <div class="about-coment">
+        <div class="about-coment fade-in2 fade-in-up">
           <p>イノチとカラダの教室について</p><br>
   
           <p>「赤ちゃんってどこからきたん？」</p>
@@ -142,11 +152,11 @@ href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"
           <p>お話例:月経や精通など二次性徴や性器の洗い方など</p>
         </div>
        
-        <img src="img/about.jpg" alt="" class="about-img">
+        <img src="img/about.jpg" alt="" class="about-img fade-in fade-in-down">
       </div>
 
       <div class="about-items">
-        <div class="about-item">
+        <div class="about-item fade-in2 fade-in-down">
           <div class="item-coment">
             <p>カラダのこと、</p>
             <p>イノチのお話は</p>
@@ -160,7 +170,7 @@ href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"
           </div>
         </div>
 
-        <div class="about-item">
+        <div class="about-item fade-in2 fade-in-up">
           <div class="item-coment2">
             <p>【子宮模型と仲間たち】</p>
             <p>子宮などをモチーフにした</p>
@@ -176,23 +186,23 @@ href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"
       </div>
 
       <div class="sp-about-items">
-        <div class="about-item">
+        <div class="about-item fade-in2 fade-in-down">
           <div class="item-img">
             <img src="img/hero-1.jpg" alt="">
           </div>
-        </div>
-        <div class="item-coment">
-          <p>カラダのこと、イノチのお話は</p>
-          <p>個人、友達同士、学級単位などお話可能です。</p>
-          <p>親向け、教員向けの講座も</p>
-          <p>実施可能です。</p>
+          <div class="item-coment">
+            <p>カラダのこと、イノチのお話は</p>
+            <p>個人、友達同士、学級単位などお話可能です。</p>
+            <p>親向け、教員向けの講座も</p>
+            <p>実施可能です。</p>
+          </div>
         </div>
 
-        <div class="about-item">
+        <div class="about-item fade-in2 fade-in-up">
           <div class="item-img2">
             <img src="img/tool.jpg" alt="">
           </div>
-          <div class="item-coment2">
+          <div class="item-coment2 ">
             <p>【子宮模型と仲間たち】</p>
             <p>子宮などをモチーフにした</p>
             <p>ツールを手作りして</p>
@@ -202,15 +212,15 @@ href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"
         </div>
       </div>
 
-      <img src="img/about2.png" alt="" class="about2-img" id="coment">
+      <img src="img/about2.png" alt="" class="about2-img fade-in fade-in-down" id="coment">
     </section>
 
     <section id="about-sub">
       <div class="about-subtitol">
         <div class="about-sub-item">
-          <img src="img/about-subtitol.png" alt="母乳相談" class="about-subtitol-img">
+          <img src="img/about-subtitol.png" alt="母乳相談" class="about-subtitol-img fade-in fade-in-down">
   
-          <div class="about-subtitol-coment">
+          <div class="about-subtitol-coment fade-in2 fade-in-up">
             <p>「おっぱいが張って痛い」「赤ちゃんが上手に吸ってくれない」</p><br>
   
             <p>「しこりができた」など産院を退院してからトラブルが起きたり</p><br>
@@ -234,13 +244,13 @@ href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"
         </div>
 
         <div class="about-sub-item">
-          <img src="img/about-subtitol2.png" alt="育児相談・沐浴指導" class="about-subtitol-img">
+          <img src="img/about-subtitol2.png" alt="育児相談・沐浴指導" class="about-subtitol-img fade-in fade-in-down">
 
           <div class="about-subimg">
             <img src="img/about3.jpg" alt="イメージ画像" >
           </div>
 
-          <div class="about-subtitol-coment">
+          <div class="about-subtitol-coment fade-in2 fade-in-up">
             <p>1人目を出産して思ったのは「教科書と違うやんか！」でした。</p><br>
 
             <p>ネットで調べてみるけど情報が溢れすぎて何が正しいかわからない。</p><br>
@@ -260,13 +270,13 @@ href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"
         </div>
 
         <div class="about-sub-item">
-          <img src="img/about-subtitol3.png" alt="赤ちゃんを迎える話">
+          <img src="img/about-subtitol3.png" alt="赤ちゃんを迎える話" class="about-subtitol-img fade-in fade-in-down">
 
           <div class="about-subimg2">
             <img src="img/about4.jpg" alt="イメージ画像" >
           </div>
 
-          <div class="about-subtitol-coment">
+          <div class="about-subtitol-coment fade-in2 fade-in-up">
             <p>赤ちゃんを迎えること。</p><br>
             
             <p>楽しみや嬉しい気持ちと同じくらい怖さや不安を</p><br>
