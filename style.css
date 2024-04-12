@@ -169,7 +169,6 @@ transform: translateY(60px);
   color: #fff;
 }
 
-
 /* ドロップダウンメニュー */
 .dropdown__lists {
   display: none  !important;/*デフォルトでは非表示の状態にしておく*/
@@ -235,6 +234,15 @@ transform: translateY(60px);
 .gnavi__list:hover .dropdown__lists {
   visibility: visible;/*Gナビメニューにホバーしたら表示*/
   opacity: 1;/*不透明度1*/
+}
+
+/* ページ遷移時の位置調整 */
+/* aboutとabout-subに付与 */
+.anchor::before {
+  content:'';
+  display: block;
+  padding-top: 110px;
+  margin-top: -110px;
 }
 
 /* SP版オーバーレイ */
@@ -335,7 +343,7 @@ main {
   text-align: center;
   align-items: center;
   margin: 0 auto;
-  padding: 32px 16px 0;
+  padding: 16px 0;
 
   position:relative;
   top: 110px;
@@ -417,6 +425,11 @@ footer {
   justify-content: space-between;
 }
 
+.index-footer {
+  position:relative;
+  top: 110px;
+}
+
 .footer-taitl{
   color: white;
   font-weight: bold;
@@ -460,6 +473,11 @@ i{
     width: 100%;
   }
 
+  .index-footer {
+    position:relative;
+    top: 100px;
+  }
+
   .source {
     font-size: 12px; 
     width: 50%;
@@ -494,9 +512,8 @@ i{
 
 .main-sub {
   width: 600px;
-  margin: 32px auto;
-  align-items: center;
-  padding-bottom: 32px;
+  height: 100px;
+  margin: 16px auto;
 }
 
 .main-sub img {
@@ -520,7 +537,7 @@ i{
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  margin: 16px auto;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -574,7 +591,7 @@ i{
 
 /*index about部分 */
 .about-chapter {
-  margin-top: 125px;
+  margin-top: 16px;
   height: 64px;
   font-size: 28px;
   color: white;
@@ -590,7 +607,7 @@ i{
   text-align: center;
   white-space: nowrap;
   font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
-  margin-top: 32px;
+  margin-top: 16px;
 }
 
 .about-coment p {
@@ -598,21 +615,10 @@ i{
   color: #595959;
 }
 
-.wrap-2 {
-  width: 70%;
-  min-width: 662px;
-  height: auto;
-  background-color: white;
-  text-align: center;
-  align-items: center;
-  margin: 0 auto;
-  padding: 16px 0;
-}
-
 .about-img {
   width: 662px;
   height:400px;
-  margin-top: 32px;
+  margin-top: 16px;
 }
 
 .sp-about-items {
@@ -622,7 +628,7 @@ i{
 .about2-img {
   width: 662px;
   height:500px;
-  margin-top: 32px;
+  margin-top: 0 auto;
 }
 
 .about-img img {
@@ -639,7 +645,7 @@ i{
 .about-item {
   width: 100%;
   display: flex;
-  margin: 32px auto 0;
+  margin: 0 auto;
 }
 
 .item-coment {
@@ -656,8 +662,8 @@ i{
   font-size: 18px;
   line-height: 1.7;
   text-align: left;
-  padding:0 16px;
   color: #595959;
+  padding-top: 16px;
 }
 
 .item-img {
@@ -674,7 +680,7 @@ i{
 .item-img2 {
   width: 40%;
   height: 300px;
-  
+  padding: 16px 0 0 16px;
 }
 
 .item-img2 img {
@@ -728,11 +734,13 @@ i{
   .item-img2 {
     width: 100%;
     height: 300px;
-    padding:0 16px 16px;
+    padding:16px;
+    text-align: center;
   }
   
   .item-img2 img {
     height: 100%;
+    margin: 0 auto;
   }
   
   .about-item:nth-child(2n+1) { flex-direction: row; }         
@@ -752,9 +760,13 @@ i{
   margin-bottom: 32px;
 }
 
+.about-sub-item:last-child {
+  margin: 0;
+}
+
 .about-subtitol-img {
   height: 64px;
-  margin: 0 0 16px 16px;
+  margin-bottom:16px;
 }
 
 .about-subimg {
@@ -782,7 +794,7 @@ i{
 
 
 .about-subtitol-coment {
-  padding: 16px 32px 0;
+  padding: 16px 16px 0;
   font-size: 18px;
   line-height: 1.4;
   text-align: left;
@@ -797,14 +809,7 @@ i{
 
 @media (max-width:768px){
 
-  .wrap-2 {
-    min-width: 500px;
-    margin: 0 auto;
-    padding: 16px 0;
-  }
-
   .about-chapter {
-    margin-top: 70px;
     height: 60px;
     font-size: 26px;
     color: white;
@@ -822,11 +827,10 @@ i{
     line-height: 1.9;
   }
   
-
   .about-img {
     width: 100%;
     height: 300px;
-    margin-top: 16px;
+    margin: 16px 0;
   }
 
   .about2-img {
@@ -899,7 +903,7 @@ i{
   text-align: center;
   white-space: nowrap;
   font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
-  margin: 32px 0;
+  margin: 16px 0;
 }
 
 .prof-coment p {
@@ -927,19 +931,60 @@ i{
 }
 
 .cost {
-  margin: 32px 64px 16px 64px;
-  padding: 18px;
-  border: 1px solid #87BF8B;
+  margin: 0 auto;
+  padding: 16px 18px 0;
+  max-width: 662px;
+  font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+}
+
+.cost-table {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.cost-table tr {
+  border-bottom: 1px solid #87BF8B;
   text-align: left;
-  font-size: 16px;
-  line-height: 1.3;
+}
+
+.cost-table th{
+  padding: 16px 0;
+  width: 75%;
+  font-size: 18px;
+  color: #87BF8B;
+}
+
+.cost-table th span{
+  font-size: 18px;
+  color: #E7D848;
+}
+
+.cost-table th p{
+  margin-left: 18px;
+  font-size: 14px;
+  color: #595959;
+  line-height: 1.5;
+}
+
+.cost-table td{
+  padding: 18px 0;
+  width: 25%;
+  font-size: 18px;
+  color: #595959;
 }
 
 .cost-caution {
+  margin: 0 auto;
+  padding-top: 18px;
   font-size: 14px;
   text-align: left;
   line-height: 1.3;
-  margin: 0 64px;
+  color: #595959;
+}
+
+.cost-caution span {
+  font-size: 14px;
+  color: #87BF8B;
 }
 
 @media (max-width:768px){
@@ -964,7 +1009,7 @@ i{
   .license-img {
     width: 100%;
     height: 350px;
-    margin: 16px 0;
+    margin: 16px 0 0;
   }
 
   .prof-footer {
@@ -988,15 +1033,17 @@ i{
 }
 
 .contact-coution {
+  max-width: 560px;
   font-size: 14px;
   text-align: left;
   line-height: 1.3;
-  margin: 0 64px;
+  padding: 0 16px;
+  margin: 0 auto;
 }
 
 @media (max-width:768px){
   .prof-wrap h2 {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .prof-wrap h2 a{
