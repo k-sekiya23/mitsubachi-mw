@@ -361,6 +361,12 @@ main {
   padding: 16px 0;
 }
 
+@media (max-width:500px){
+  .wrap {
+    width: 100%;
+  }
+}
+
 @media (max-width:768px){
   .header-wrapper {
     height: 100px;
@@ -986,6 +992,12 @@ i{
 .cost-caution span {
   font-size: 14px;
   color: #87BF8B;
+}
+
+@media (max-width:500px){
+  .prof-wrap {
+    width: 100%;
+  }
 }
 
 @media (max-width:768px){
