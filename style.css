@@ -6,6 +6,7 @@ body{
   margin:0 auto;
   background-color: #d5cdbd;
   height: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 /* JSフェードインアニメーション */
