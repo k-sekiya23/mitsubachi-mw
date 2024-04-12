@@ -6,7 +6,6 @@ body{
   margin:0 auto;
   background-color: #d5cdbd;
   height: 100%;
-  -webkit-text-size-adjust: 100%;
 }
 
 /* JSフェードインアニメーション */
@@ -359,12 +358,6 @@ main {
   background-color: #87BF8B;
   text-align: center;
   padding: 16px 0;
-}
-
-@media (max-width:500px){
-  .wrap {
-    width: 100%;
-  }
 }
 
 @media (max-width:768px){
@@ -992,12 +985,6 @@ i{
 .cost-caution span {
   font-size: 14px;
   color: #87BF8B;
-}
-
-@media (max-width:500px){
-  .prof-wrap {
-    width: 100%;
-  }
 }
 
 @media (max-width:768px){
