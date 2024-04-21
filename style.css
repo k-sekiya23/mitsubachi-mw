@@ -1,344 +1,7 @@
 @charset "utf-8";
 
-/* 共通CSS */
-
-body{
-  margin:0 auto;
-  background-color: #d5cdbd;
-  height: 100%;
-}
-
-/* JSフェードインアニメーション */
-.fade-in {
-  opacity: 0;
-  transition-duration: 800ms;
-  transition-property: opacity, transform;
-}
-
-.fade-in2 {
-  opacity: 0;
-  transition-duration: 1000ms;
-  transition-property: opacity, transform;
-}
-
-.fade-in-up {
-  transform: translate(0, 50px);
-}
-
-.fade-in-down {
-  transform: translate(0, -50px);
-}
-
-.scroll-in {
-  opacity: 1;
-  transform: translate(0, 0);
-}
-
-/*jQeryフェードインアニメーションの指定*/
-.scrollanime {opacity: 0;} /*一瞬表示されるのを防ぐ*/
-
-.fadeInDown0 {
-    animation-name: fadeInDown;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-}
-
-.fadeInDown {
-  animation-name: fadeInDown;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-}
-
-.fadeInDown2 {
-  animation-name: fadeInDown;
-  animation-duration: 3s;
-  animation-fill-mode: forwards;
-}
-
-@keyframes fadeInDown {
-  0% {
-      opacity: 0;
-  }
-  100% {
-  opacity: 1;
-  transform: translate(0);
-  }
-}
-
-/*上下の動きを指定*/
-.updown {
-transform: translateY(-60px);
-}
-
-.downup {
-transform: translateY(60px);
-}
-
-/* ヘッダーCSS */
-
-.header-wrapper {
-  height: 110px;
-  background-color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  opacity: 0.8;
-  z-index: 2;
-}
-
-.header-main{
-  display: flex;
-  align-items: center;
-
-}
-
-.header-logo{
-  height: 110px;
-  width: 125px;
-  margin: 0 auto;
-}
-
-.header-logo img {
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.header-title {
-  width: 280px;
-  text-align: center;
-}
-
-.header-title h1 {
-  font-size: 36px;
-  font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
-  text-align: center;
-}
-
-.gnavi__wrap {
-  width: 50%;
-  padding-right: 16px;
-  max-width: 560px;
-}
-.gnavi__lists {
-  display: flex;
-  justify-content: space-between;
-}
-.gnavi__list {
-  width: 25%;
-  /* max-width: 120px; */
-  height: 60px;
-  margin: 0 auto;
-  position: relative;
-  transition: all .3s;
-  font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
-}
-.gnavi__list:hover {
-  background-color: #d5cdbd;
-}
-.gnavi__list:not(:first-child)::before {
-  content: "";
-  width: 1px;
-  height: 100%;
-  background-color: #87BF8B;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: all .3s;
-}
-.gnavi__list:hover::before {
-  background-color: #d5cdbd;
-}
-.gnavi__list a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-  font-size: 15px;
-  letter-spacing: 0.05em;
-  font-weight: 600;
-  transition: all .3s;
-}
-.gnavi__list:hover a {
-  color: #fff;
-}
-
-/* ドロップダウンメニュー */
-.dropdown__lists {
-  display: none  !important;/*デフォルトでは非表示の状態にしておく*/
-  width: 30%;
-  position: absolute;
-  top: 50px;
-  right: 0;
-}
-.gnavi__list:hover .dropdown__lists {
-  display: block  !important;/*Gナビメニューにホバーしたら表示*/
-}
-.dropdown__list {
-  background-color: #d5cdbd;
-  height: 60px;
-  transition: all .3s;
-  position: relative;
-}
-.dropdown__list:not(:first-child)::before{
-  content: "";
-  width: 100%;
-  height: 1px;
-  background-color: #d5cdbd;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.dropdown__list:hover {
-  background-color: #ecd5a7;
-}
-.dropdown__list a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #87BF8B;
-  text-decoration: none;
-  position: relative;
-}
-.dropdown__list a::before {
-  content: '';
-  display: block;
-  width: 6px;
-  height: 6px;
-  border-top: 2px solid #87BF8B;
-  border-left: 2px solid #87BF8B;
-  transform: rotate(135deg);
-  position: absolute;
-  right: 15px;
-  top: calc(50% - 5px);
-}
-.dropdown__list:hover a{
-  color: #87BF8B;
-}
-
-.dropdown__lists {
-  visibility: hidden;/*デフォルトでは非表示の状態にしておく*/
-  opacity: 0;/*不透明度0*/
-  transition: all .3s;/*表示の変化を0.3秒に指定*/
-  width: 100%;
-  position: absolute;
-  top: 60px;
-  left: 0;
-}
-.gnavi__list:hover .dropdown__lists {
-  visibility: visible;/*Gナビメニューにホバーしたら表示*/
-  opacity: 1;/*不透明度1*/
-}
-
-/* ページ遷移時の位置調整 */
-/* aboutとabout-subに付与 */
-.anchor::before {
-  content:'';
-  display: block;
-  padding-top: 110px;
-  margin-top: -110px;
-}
-
-/* SP版オーバーレイ */
-.sp-menu{
-  display: block;
-  padding: 20px;
-}
-
-.sp-menu #open {
-  font-size: 32px;
-  cursor: pointer;
-}
-
-.sp-menu #open.hide {
-  display: none;
-}
-
-.sp-menu{
-  display: none;
-}
-
-main {
-  padding: 0 16px;
-}
-
-.overlay {
-  width: 40%;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 10;
-  background: rgba(255, 255, 255, 0.95);
-  text-align: center;
-  padding:64px 48px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .6s;
-}
-
-.overlay.show {
-  opacity: 0.8;
-  pointer-events: auto;
-}
-
-.overlay #close {
-  position: absolute;
-  top: 30px;
-  right: 20px;
-  font-size: 32px;
-  cursor: pointer;
-}
-
-.overlay ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.overlay li:hover {
-  color: #d5cdbd;
-}
-
-.overlay li {
-  margin-top: 32px;
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity .3s, transform .3s;
-}
-
-.overlay.show li {
-  opacity: 1;
-  transform: none;
-}
-
-.overlay.show li:nth-child(1) {
-  transition-delay: .1s;
-}
-
-.overlay.show li:nth-child(2) {
-  transition-delay: .2s;
-}
-
-.overlay.show li:nth-child(3) {
-  transition-delay: .3s;
-}
-
-.overlay.show li:nth-child(4) {
-  transition-delay: .4s;
-}
-
-
 .wrap {
-  width: 70%;
-  min-width: 662px;
-  height: auto;
+  width: 80%;
   background-color: white;
   text-align: center;
   align-items: center;
@@ -349,6 +12,21 @@ main {
   top: 110px;
 }
 
+/* index.html以外のラップ指定 */
+/* 要素上部のpadding不要の為 */
+.prof-wrap {
+  width: 80%;
+  background-color: white;
+  text-align: center;
+  align-items: center;
+  margin: 0 auto;
+  padding:0 0 16px 0;
+
+  position:relative;
+  top: 110px;
+}
+
+/* プロフィールなどの各見出し */
 .top-chapter {
   height: 64px;
   font-size: 28px;
@@ -358,147 +36,33 @@ main {
   background-color: #87BF8B;
   text-align: center;
   padding: 16px 0;
+  border-radius: 15px;
 }
 
 @media (max-width:768px){
-  .header-wrapper {
-    height: 100px;
-  }
-  
-  .header-main{
-    display: flex;
-    align-items: center;
-  }
-  
-  .header-logo{
-    height: 100px;
-    width: 105px;
-    margin: 0 auto;
-  }
-  
-  .header-logo img {
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-  }
-  
-  .header-title {
-    width: 250px;
-  }
-  
-  .header-title h1 {
-    font-size: 32px;
-  }
-  
   .wrap {
-    min-width: 500px;
+    width: 100%;
     margin: 0 auto;
-    padding:16px 0 0 ;
+    padding:16px 0;
     position: relative;
-    top: 100px;
+    top: 60px;
   }
 
-}
-
-@media (max-width:817px){
-  .gnavi__wrap {
-    display: none;
-    }
-    
-    .sp-menu{
-      display: block;
-    }
-  
-    .sp-menu:hover{
-      color: #d5cdbd;
-    }
-}
-
-/* 共通フッター部分 */
-
-footer {
-  width: 100%;
-  height: 96px;
-  background-color: #87BF8B;
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-}
-
-.index-footer {
-  position:relative;
-  top: 110px;
-}
-
-.footer-taitl{
-  color: white;
-  font-weight: bold;
-  font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
-  font-size: 18px;
-  padding-left: 18px;
-  width: 30%;
-}
-
-.source {
-  color: white;
-  font-size: 16px;
-  text-align: center;
-  text-wrap: wrap;
-  width: 40%;
-}
-
-.footer-item{
-  width: 30%;
-}
-
-.footer-item :hover{
-  color: #d5cdbd;
-}
-
-i{
-  float: right;
-  padding-right: 32px;
-  color: white;
-}
-
-.icon::before {
-  font-family: “Font Awesome 5 Free”;
-  font-weight: 900;
-  content: “\f000”;
-}
-
-@media (max-width:768px){
-  footer {
-    height: 80px;
+  .prof-wrap {
     width: 100%;
+    margin: 0 auto;
+    padding:0 0 16px 0;
+    position: relative;
+    top: 60px;
   }
 
-  .index-footer {
-    position:relative;
-    top: 100px;
-  }
-
-  .source {
-    font-size: 12px; 
-    width: 50%;
-  }
-
-  .footer-item{
-    width: 20%;
-  }
-
-}
-
-@media (max-width:500px){
-  footer {
-    height: 80px;
-    width: 100%;
-    width: 500px;
+  .top-chapter {
+    height: 56px;
+    font-size: 20px;
   }
 }
 
 /* index  main部分CSS */
-
 .main-img {
   width: 360px;
   height: 400px;
@@ -507,28 +71,27 @@ i{
 
 .main-img img {
   max-width: 100%;
-  height:auto;
+  height:100%;
 }
 
 .main-sub {
-  width: 600px;
-  height: 100px;
+  max-width: 600px;
+  height: 120px;
   margin: 16px auto;
+  padding: 0 16px;
 }
 
 .main-sub img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .contain {
-  width: 50%;
-  min-width: 600px;
-  height: 300px;
+  width: 100%;
+  height: 240px;
   background-color: rgba(255,255,255, 0.4);
   text-align: center;
   align-items: center;
-  margin: 32px auto;
 }
 
 .main-copy {
@@ -556,36 +119,48 @@ i{
   color: #87BF8B;
 }
 
+.sp-copy {
+  display: none;
+}
+
 @media (max-width:768px){
 
   .contain {
-    min-width: 450px;
+    width: 100%;
     height: 240px;
+    padding-bottom: 16px;
   }
 
   .main-img {
-    width: 300px;
-    height: 320px;
+    width: 240px;
+    height: 280px;
     margin:0 auto;
   }
 
   .main-sub {
-    width: 100%;
+    /* width: 80%; */
+    max-width: 360px;
     height: 80px;
     padding: 0;
   }
 
-  .main-copy {
-    margin: 16px 0 0;
-  }
-
   .main-copy p {
-    font-size: 16px;  
+    font-size: 14px;  
     line-height: 1.8;
   }
 
   .main-copy span {
     font-size: 24px;
+  }
+}
+
+@media (max-width:817px){
+  .sp-copy {
+    display: block;
+  }
+
+  .pc-copy {
+    display: none;
   }
 }
 
@@ -600,6 +175,7 @@ i{
   background-color: #87BF8B;
   text-align: center;
   padding: 16px 0;
+  border-radius: 15px;
 }
 
 .about {
@@ -615,10 +191,383 @@ i{
   color: #595959;
 }
 
+.about-coment p:last-child {
+  font-size: 14px;
+}
+
 .about-img {
-  width: 662px;
+  max-width: 662px;
   height:400px;
   margin-top: 16px;
+  border-radius: 10px;
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
+}
+
+
+@media (max-width:960px){
+  .about-img {
+    width: 500px;
+    height: 300px;
+    margin-top: 16px;
+  }
+}
+
+@media (max-width:768px){
+
+  .about {
+    font-size: 14px;
+  }
+  
+  .about-coment p {
+    line-height: 1.7;
+
+  }
+
+  .about-coment p:last-child {
+    font-size: 12px;
+  }
+}
+
+@media (max-width:500px){
+  .about {
+    font-size: 10px;
+  }
+  
+  .about-coment p {
+    line-height: 1.9;
+
+  }
+
+  .about-coment p:last-child {
+    font-size: 8px;
+  }
+
+  .about-img {
+    width: 340px;
+    height: 200px;
+  }
+}
+
+/* プロフィール部分のCSS */
+/* prof  */
+.prof-img {
+  width: 600px;
+  height: 450px;
+  margin:0 auto;
+  padding: 16px 0 0 0;
+}
+
+.prof-img img {
+  max-width: 100%;
+}
+
+.prof-name {
+  margin: 16px 0;
+}
+
+.prof-name h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #595959;
+  font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+  padding-bottom: 16px;
+}
+
+.prof-name h2 {
+  font-size: 32px;  
+  color: #595959;
+  font-family:"Courier";
+  font-weight: bold;
+}
+
+.prof-coment {
+  font-size: 18px;
+  color: #595959;
+  text-align: center;
+  white-space: nowrap;
+  font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+  margin: 16px 0;
+}
+
+.prof-coment p {
+  line-height: 1.7;
+}
+
+.prof-coment span {
+  font-weight: bold;
+  color: #87BF8B;
+}
+
+.license-img {
+  width: 662px;
+  height:450px ;
+  margin: 16px 0 0;
+  border-radius: 10px;
+}
+
+.license-img img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width:960px){
+  .license-img {
+    width: 500px;
+    height: 360px;
+    margin-top: 16px;
+  }
+}
+
+@media (max-width:900px){
+  .prof-img {
+    width: 450px;
+    height: 360px;
+  }
+}
+
+@media (max-width:768px){
+  .prof-img {
+    width: 340px;
+    height: 260px;
+  }
+
+  .prof-name h1 {
+    font-size: 24px;
+    padding-bottom: 16px;
+  }
+  
+  .prof-name h2 {
+    font-size: 20px;
+  }
+
+  .prof-coment {
+    font-size: 14px;
+  }
+
+  .prof-coment p {
+    line-height: 1.3;
+  }
+
+  .prof-footer {
+    margin-top: 100px;
+    height: 80px;
+  }
+}
+
+@media (max-width:500px){
+  .license-img {
+    width: 340px;
+    height: 240px;
+    margin: 16px 0 0;
+  }
+}
+
+/* cost部分のCSS */
+.cost {
+  margin: 0 auto;
+  padding: 16px 18px 0;
+  max-width: 662px;
+  font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+}
+
+.cost-table {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.cost-table tr {
+  border-bottom: 1px solid #87BF8B;
+  text-align: left;
+}
+
+.cost-table th{
+  padding: 16px 0;
+  width: 75%;
+  font-size: 18px;
+  color: #87BF8B;
+}
+
+.cost-table th span{
+  font-size: 18px;
+  color: #E7D848;
+}
+
+.cost-table th p{
+  margin-left: 18px;
+  font-size: 14px;
+  color: #595959;
+  line-height: 1.5;
+}
+
+.cost-table td{
+  padding: 18px 0;
+  width: 25%;
+  font-size: 18px;
+  color: #595959;
+}
+
+.sp-table{
+  display: none;
+}
+
+.cost-caution {
+  margin: 0 auto;
+  padding: 16px 0;
+  font-size: 14px;
+  text-align: left;
+  line-height: 1.3;
+  color: #595959;
+}
+
+.cost-caution span {
+  font-size: 14px;
+  color: #87BF8B;
+}
+
+@media (max-width:768px){
+  .cost {
+    width: 100%;
+  }
+
+  .cost-table th{
+    font-size: 16px;
+  }
+  
+  .cost-table th span{
+    font-size: 16px;
+  }
+  
+  .cost-table th p{
+    font-size: 11px;
+    line-height: 1.7;
+  }
+
+  .cost-table td{
+    font-size: 16px;
+  }
+
+  .sp-table {
+    display: block;
+  }
+
+  .pc-table {
+    display: none;
+  }
+
+  .cost-caution {
+    font-size: 10px;
+    line-height: 1.7;
+  }
+}
+
+/* 母乳相談、育児相談・沐浴指導、赤ちゃんを迎える話 */
+.about-subtitol {
+  margin: 16px auto 0;
+  max-width: 662px;
+  text-align: left;
+}
+
+.about-sub-item {
+  margin-bottom: 32px;
+}
+
+.about-sub-item:last-child {
+  margin: 0;
+}
+
+.about-subtitol-img {
+  height: 64px;
+  margin-bottom:16px;
+}
+
+.about-subimg {
+  width: 80%;
+  height: 360px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.about-subimg img{
+  width: 100%;
+  height: 100%;
+}
+
+.about-subimg2 {
+  width: 300px;
+  height: 400px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.about-subimg2 img{
+  height: 100%;
+}
+
+
+.about-subtitol-coment {
+  padding: 16px 16px 0;
+  font-size: 18px;
+  line-height: 1.4;
+  text-align: left;
+  color: #595959;
+  font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+}
+
+.about-subtitol-coment span{
+  font-size: 20px;
+  color: #87BF8B;
+}
+
+@media (max-width:768px){
+  .about-subtitol {
+    margin: 0 auto;
+    padding-top: 16px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .about-sub-item {
+    margin-bottom: 16px;
+  }
+
+  .about-subtitol-img {
+    height: 48px;
+    margin: 0;
+  }
+
+  .about-subtitol-coment {
+    font-size: 14px;
+  }
+  
+  .about-subtitol-coment span{
+    font-size: 16px;
+    color: #87BF8B;
+  }
+
+  .about-subimg {
+    width: 300px;
+    height: 220px;
+  }
+
+  .about-subimg2 {
+    width: 200px;
+    height: 260px;
+  }
+}
+
+@media (max-width:500px){
+  .about-subtitol-coment {
+    font-size: 11px;
+  }
+  
+  .about-subtitol-coment span{
+    font-size: 12px;
+    color: #87BF8B;
+  }
 }
 
 .sp-about-items {
@@ -629,11 +578,6 @@ i{
   width: 662px;
   height:500px;
   margin-top: 0 auto;
-}
-
-.about-img img {
-  width: 100%;
-  height: 100%;
 }
 
 .about-items {
@@ -691,25 +635,49 @@ i{
 
 .about-item:nth-child(2n  ) { flex-direction: row-reverse; } 
 
+@media (max-width:960px){
+  .about2-img {
+    width: 500px;
+    height: 400px;
+  }
+}
+
 @media (max-width:768px){
   .about-items {
     display: none;
   }
   
   .sp-about-items {
-    max-width: 662px;
-    align-items: center;
-    margin: 0 auto;
+    width: 100%;
     display: block;
   }
 
   .about-item {
     display: block;
   }
+
+  .item-img {
+    width: 320px;
+    height: 200px;
+    margin: 0 auto;
+    padding: 0 0 16px 0;
+  }
+  
+  .item-img2 {
+    width: 170px;
+    height: 260px;
+    margin: 0 auto;
+    padding: 16px 0;
+  }
+  
+  .item-img2 img {
+    height: 100%;
+    margin: 0 auto;
+  }
   
   .item-coment {
     width: 100%;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 1.7;
     text-align: center;
     padding:0 16px;
@@ -718,306 +686,25 @@ i{
   
   .item-coment2 {
     width: 100%;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 1.7;
     text-align: center;
     padding:0 16px;
     color: #595959;
   }
   
-  .item-img {
-    width: 100%;
-    height: 250px;
-    padding: 0 16px 16px;
-  }
-  
-  .item-img2 {
-    width: 100%;
-    height: 300px;
-    padding:16px;
-    text-align: center;
-  }
-  
-  .item-img2 img {
-    height: 100%;
-    margin: 0 auto;
-  }
-  
   .about-item:nth-child(2n+1) { flex-direction: row; }         
   
   .about-item:nth-child(2n  ) { flex-direction: row-reverse; } 
+
 }
 
-
-/* 母乳相談、育児相談・沐浴指導、赤ちゃんを迎える話 */
-.about-subtitol {
-  margin: 32px auto 0;
-  max-width: 662px;
-  text-align: left;
-}
-
-.about-sub-item {
-  margin-bottom: 32px;
-}
-
-.about-sub-item:last-child {
-  margin: 0;
-}
-
-.about-subtitol-img {
-  height: 64px;
-  margin-bottom:16px;
-}
-
-.about-subimg {
-  width: 80%;
-  height: 360px;
-  align-items: center;
-  margin: 0 auto;
-}
-
-.about-subimg img{
-  width: 100%;
-  height: 100%;
-}
-
-.about-subimg2 {
-  width: 300px;
-  height: 400px;
-  align-items: center;
-  margin: 0 auto;
-}
-
-.about-subimg2 img{
-  height: 100%;
-}
-
-
-.about-subtitol-coment {
-  padding: 16px 16px 0;
-  font-size: 18px;
-  line-height: 1.4;
-  text-align: left;
-  color: #595959;
-  font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
-}
-
-.about-subtitol-coment span{
-  font-size: 20px;
-  color: #87BF8B;
-}
-
-@media (max-width:768px){
-
-  .about-chapter {
-    height: 60px;
-    font-size: 26px;
-    color: white;
-  }
-
-  .about {
-    font-size: 14px;
-    text-align: center;
-    white-space: nowrap;
-    font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
-    margin-top: 16px;
-  }
-
-  .about-coment p {
-    line-height: 1.9;
-  }
-  
-  .about-img {
-    width: 100%;
-    height: 300px;
-    margin: 16px 0;
-  }
-
+@media (max-width:500px){
   .about2-img {
-    width: 100%;
-    height: 360px;
-    margin-top: 16px;
-  }
-
-  .about-subimg {
-    width: 80%;
-    height: 300px;
-  }
-
-  .about-subimg2 {
-    width: 240px;
-    height: 320px;
-  }
-
-  .about-subtitol-coment {
-    font-size: 14px;
+    width: 340px;
+    height: 260px;
   }
 }
-
-/* プロフィール部分のコード */
-/* prof  */
-
-.prof-wrap {
-  width: 70%;
-  min-width: 662px;
-  height: auto;
-  background-color: white;
-  text-align: center;
-  align-items: center;
-  margin: 0 auto;
-  padding-bottom: 16px;
-  position:relative;
-  top: 110px;
-}
-
-.prof-img {
-  width: 600px;
-  height: 450px;
-  margin:0 auto;
-  padding: 16px 0;
-}
-
-.prof-img img {
-  max-width: 100%;
-}
-
-.prof-name {
-  margin: 16px 0;
-}
-
-.prof-name h1 {
-  font-size: 36px;
-  font-weight: bold;
-  color: #595959;
-  font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
-  padding-bottom: 16px;
-}
-
-.prof-name h2 {
-  font-size: 32px;  color: #595959;
-}
-
-.prof-coment {
-  font-size: 18px;
-  color: #595959;
-  text-align: center;
-  white-space: nowrap;
-  font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
-  margin: 16px 0;
-}
-
-.prof-coment p {
-  line-height: 1.7;
-}
-
-.prof-coment span {
-  font-weight: bold;
-  color: #87BF8B;
-}
-
-.license-img {
-  width: 662px;
-  height:450px ;
-  margin: 16px 0 0;
-}
-
-.license-img img {
-  width: 100%;
-  height: 100%;
-}
-
-.prof-footer {
-  margin-top: 110px;
-}
-
-.cost {
-  margin: 0 auto;
-  padding: 16px 18px 0;
-  max-width: 662px;
-  font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
-}
-
-.cost-table {
-  margin: 0 auto;
-  width: 100%;
-}
-
-.cost-table tr {
-  border-bottom: 1px solid #87BF8B;
-  text-align: left;
-}
-
-.cost-table th{
-  padding: 16px 0;
-  width: 75%;
-  font-size: 18px;
-  color: #87BF8B;
-}
-
-.cost-table th span{
-  font-size: 18px;
-  color: #E7D848;
-}
-
-.cost-table th p{
-  margin-left: 18px;
-  font-size: 14px;
-  color: #595959;
-  line-height: 1.5;
-}
-
-.cost-table td{
-  padding: 18px 0;
-  width: 25%;
-  font-size: 18px;
-  color: #595959;
-}
-
-.cost-caution {
-  margin: 0 auto;
-  padding-top: 18px;
-  font-size: 14px;
-  text-align: left;
-  line-height: 1.3;
-  color: #595959;
-}
-
-.cost-caution span {
-  font-size: 14px;
-  color: #87BF8B;
-}
-
-@media (max-width:768px){
-  .prof-wrap {
-    min-width: 500px;
-    margin: 0 auto;
-    position: relative;
-    top: 100px;
-  }
-
-  .prof-img {
-    width: 500px;
-    height: 380px;
-    margin:0 auto;
-    padding: 16px 0;
-  }
-
-  .prof-coment p {
-    line-height: 1.3;
-  }
-
-  .license-img {
-    width: 100%;
-    height: 350px;
-    margin: 16px 0 0;
-  }
-
-  .prof-footer {
-    margin-top: 100px;
-    height: 80px;
-  }
-}
-
 
 /* お問い合わせ */
 .prof-wrap h2 {
