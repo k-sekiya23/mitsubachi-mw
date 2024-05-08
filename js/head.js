@@ -4,7 +4,7 @@
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>みつばち助産院</title>
+      <title>みつばち助産院|大阪府枚方市にある出張型助産院</title>
       <meta name="description" content="みつばち助産院は大阪府枚方市にある出張型助産院です。子育てを孤育てにしない、家族の『和』を大切にしたいそんな想いで皆さまと同じ目線で歩みたい" />
 
       <!-- reset.css destyle -->
