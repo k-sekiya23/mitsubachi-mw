@@ -18,20 +18,6 @@
 
       <script src="https://kit.fontawesome.com/470eab1a94.js" crossorigin="anonymous"></script>
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-      <!-- jquery -->
-      <script>
-        // ロード時のヘッダーフェイドイン
-        $(function () {
-          $(window).scroll(function () {
-            const wHeight = $(window).height();
-            const scrollAmount = $(window).scrollTop();
-            $(window).on('load', function(){
-              $('.fadeInDown0').addClass('open');
-            });
-          });
-        });
-      </script>
     </head>
   `)
 }
