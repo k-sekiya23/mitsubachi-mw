@@ -361,19 +361,19 @@ main {
 @media (max-width:960px){
   .gnavi__wrap {
     display: none;
-    }
-    
-    .sp-menu{
-      display: block;
-    }
+  }
   
-    .sp-menu:hover{
-      color: #d5cdbd;
-    }
+  .sp-menu{
+    display: block;
+  }
 
-    .overlay.show a {
-      font-size: 14px;
-    }
+  .sp-menu:hover{
+    color: #d5cdbd;
+  }
+
+  .overlay.show a {
+    font-size: 14px;
+  }
 }
 
 /* 共通フッター部分 */
